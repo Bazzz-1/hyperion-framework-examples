@@ -1,0 +1,11 @@
+[workspace]
+resolver = "2"
+members = ["component_a", "component_b", "common_messages"]
+
+[workspace.dependencies]
+common_messages = { path = "common_messages" }
+hyperion-framework = "0.3.0"
+serde = { version = "1.0.219", features = ["derive"] }
+tokio = "1.46.1"
+log = "0.4.27"
+async-trait = "0.1.88"

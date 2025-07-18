@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <container>
+        <name>ComponentA</name>
+        <version>0.1</version>
+        <version_title>Example 0.3</version_title>
+        <software_collection>Hyperion Example</software_collection>
+    </container>
+    <logging>
+        <level>Debug</level>  <!-- Off, Trace, Debug, Info, Warn, Error -->
+    </logging>
+
+    <component>
+        <!-- Here you can put specific config for the internal component (logic) -->
+        <increment>1</increment>
+    </component>
+</configuration>

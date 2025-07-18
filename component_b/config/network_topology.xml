@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<network_config>
+    <container_name>ComponentB</container_name>
+    <server_address>127.0.0.1:50502</server_address>
+
+    <client_connections>
+        <connection>
+            <name>ComponentA</name>
+            <address>127.0.0.1:50501</address>
+        </connection>
+    </client_connections>
+
+</network_config>

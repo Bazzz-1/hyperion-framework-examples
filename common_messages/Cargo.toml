@@ -1,0 +1,8 @@
+[package]
+name = "common_messages"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hyperion-framework      = { workspace = true }
+serde                   = { workspace = true }

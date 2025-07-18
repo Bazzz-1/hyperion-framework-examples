@@ -1,0 +1,12 @@
+[package]
+name = "component_a"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+common_messages         = { workspace = true }
+hyperion-framework      = { workspace = true }
+serde                   = { workspace = true }
+tokio                   = { workspace = true }
+log                     = { workspace = true }
+async-trait             = { workspace = true }

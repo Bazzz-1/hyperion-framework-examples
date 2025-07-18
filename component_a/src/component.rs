@@ -3,8 +3,8 @@
 // https://github.com/Bazzz-1/hyperion-framework-examples
 // https://github.com/Bazzz-1/hyperion-framework
 //
-// A lightweight Rust framework for building modular, component-based systems
-// with built-in TCP messaging and CLI control.
+// A lightweight component-based TCP framework for building service-oriented Rust applications with
+// CLI control, async messaging, and lifecycle management.
 //
 // Example written by Robert Hannah 2025
 // -------------------------------------------------------------------------------------------------
@@ -157,9 +157,9 @@ impl Component {
                 let response: ExampleMessage = process_message(example_message, self.config.component.increment).await;
                 // Take response and put it into a ClientBrokerMessage for Hyperion to process and send to relevant containers
                 // The target_clients correlate to the names given in network_topology.xml
-                return Some(ClientBrokerMessage::new(vec!["ComponentA"], ContainerMessage::ExampleMessage(response)));
+                return Some(ClientBrokerMessage::new(vec!["ComponentB"], ContainerMessage::ExampleMessage(response)));
             }
-            ContainerMessage::AnotherExampleMessage(another_example_message) => {
+            ContainerMessage::AnotherExampleMessage(_another_example_message) => {
                 log::debug!("{} has received AnotherExampleMessage - not logic implemented",
                     self.config.container.name);
             }

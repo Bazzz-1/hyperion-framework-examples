@@ -3,8 +3,8 @@
 // https://github.com/Bazzz-1/hyperion-framework-examples
 // https://github.com/Bazzz-1/hyperion-framework
 //
-// A lightweight Rust framework for building modular, component-based systems
-// with built-in TCP messaging and CLI control.
+// A lightweight component-based TCP framework for building service-oriented Rust applications with
+// CLI control, async messaging, and lifecycle management.
 //
 // Example written by Robert Hannah 2025
 // -------------------------------------------------------------------------------------------------

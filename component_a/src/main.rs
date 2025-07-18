@@ -3,8 +3,8 @@
 // https://github.com/Bazzz-1/hyperion-framework-examples
 // https://github.com/Bazzz-1/hyperion-framework
 //
-// A lightweight Rust framework for building modular, component-based systems
-// with built-in TCP messaging and CLI control.
+// A lightweight component-based TCP framework for building service-oriented Rust applications with
+// CLI control, async messaging, and lifecycle management.
 //
 // Example written by Robert Hannah 2025
 // -------------------------------------------------------------------------------------------------
@@ -28,6 +28,7 @@ use tokio::io::{AsyncBufReadExt, BufReader, stdin};
 use tokio::sync::{mpsc, Notify};
 use tokio::time::{sleep, Duration};
 use tokio::task;
+use common_messages::messages::example_message::ExampleMessage;
 
 // Local
 mod component_logic;
@@ -85,6 +86,7 @@ async fn main() {
                         println!("s             - Graceful container shutdown");
                         println!("s.            - Graceful container network shutdown");
                         // println!("c.            - Delete and respawn all connections"); // TODO
+                        println!("run_example    - Begin messages between components example");
                     }
                     // Command handlers for component state management
                     "start" => {
@@ -124,6 +126,17 @@ async fn main() {
                     //         "Container main"
                     //     ).await;
                     // }
+
+                    // Custom handlers
+                    "run_example" => {
+                        add_to_tx_with_retry(&main_tx,
+                            &ContainerMessage::ExampleMessage(ExampleMessage::default()),
+                            "Command line",
+                            "Container main"
+                        ).await;
+                    }
+
+                    // Catch
                     _ => println!("Unknown command: {}", command),
                 }
             }

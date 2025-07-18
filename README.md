@@ -3,7 +3,7 @@
 
 ---
 
-# Hyperion Framework Overview
+## Hyperion Framework Overview
 [The Hyperion Framework](https://github.com/Bazzz-1/hyperion-framework) is a lightweight, component-based framework for building distributed Rust applications using TCP messaging. It helps you split large programs into modular, asynchronous services—each wrapped in a HyperionContainer.
 
 Each component becomes a self-contained, event-driven service that:
@@ -20,11 +20,12 @@ container-like encapsulation within native Rust programs.
 The framework makes it simple to bring your project into a fully asynchronous and multithreaded service-based environment,
 enabling independent component development, easier debugging, and scalability.
 
+---
 
-# Getting Started
+## Getting Started
 
 
-## Repository Structure
+### Repository Structure
 
 ```
 hyperion-framework-examples
@@ -42,9 +43,9 @@ hyperion-framework-examples
 
 ---
 
-## User Guide
+### User Guide
 
-### Running the Example
+#### Running the Example
 
 This is a simple example of 2 containers (`component_a` and `component_b`) receiving, processing, and publishing messages.
 
@@ -74,7 +75,7 @@ in the other.
 
 
 ---
-### Implementing Your Own Components
+## Implementing Your Own Components
 
 This repository's examples can serve as a solid base to start implementing your own components.
 

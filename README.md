@@ -89,4 +89,4 @@ If you have any questions, issues, or feature requests, feel free to open an iss
 
 ---
 
-Let me know if you'd like me to adjust or expand on any section further!
+Feel free to contribute to this repository to improve on or add more examples. Or leave a request for more specific examples.

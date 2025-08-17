@@ -4,7 +4,7 @@ members = ["component_a", "component_b", "common_messages"]
 
 [workspace.dependencies]
 common_messages = { path = "common_messages" }
-hyperion-framework = "0.3.1"
+hyperion-framework = "0.4.0"
 serde = { version = "1.0.219", features = ["derive"] }
 tokio = "1.46.1"
 log = "0.4.27"

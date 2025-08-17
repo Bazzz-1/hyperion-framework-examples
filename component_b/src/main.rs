@@ -52,7 +52,7 @@ async fn main() {
     let (main_tx, main_rx) = mpsc::channel::<ContainerMessage>(32);
     
     // Initialize and configure the Hyperion container
-    let mut container: HyperionContainer<Component, ContainerMessage> =
+    let mut container: HyperionContainer<ContainerMessage> =
         hyperion_container_factory::create::<Component, Config, ContainerMessage>(
             "component_b/config/configuration.xml",    // Container configuration file
             "component_b/config/network_topology.xml", // Network topology configuration
@@ -84,7 +84,6 @@ async fn main() {
                         println!("suspend       - Component state set to dormant");
                         println!("s             - Graceful container shutdown");
                         println!("s.            - Graceful container network shutdown");
-                        // println!("c.            - Delete and respawn all connections"); // TODO
                     }
                     // Command handlers for component state management
                     "start" => {
@@ -116,15 +115,14 @@ async fn main() {
                             "Container main"
                         ).await;
                     }
-                    // TODO
-                    // "c." => {
-                    //     add_to_tx_with_retry(&main_tx,
-                    //         &ContainerMessage::ContainerDirectiveMsg(ContainerDirective::RetryAllConnections),
-                    //         "Command line",
-                    //         "Container main"
-                    //     ).await;
-                    // }
-                    _ => println!("Unknown command: {}", command),
+                    _ => {
+                        println!("Unknown command: {}", command);
+                        println!("\n\nCommands:");
+                        println!("start         - Component state set to active");
+                        println!("suspend       - Component state set to dormant");
+                        println!("s             - Graceful container shutdown");
+                        println!("s.            - Graceful container network shutdown");
+                    },
                 }
             }
             // Monitor container state for shutdown

@@ -1,8 +1,5 @@
 # hyperion-framework-examples
 
-
----
-
 ## Hyperion Framework Overview
 [The Hyperion Framework](https://github.com/Bazzz-1/hyperion-framework) is a lightweight, component-based framework for building distributed Rust applications using TCP messaging. It helps you split large programs into modular, asynchronous services—each wrapped in a HyperionContainer.
 
